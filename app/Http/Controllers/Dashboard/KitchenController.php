@@ -38,26 +38,12 @@ class KitchenController extends Controller
             'phone' => 'required',
             'address' => 'required',
         ]);
-        $email = null;
         $idnumber = null;
 
-        if (filter_var($request->username, FILTER_VALIDATE_EMAIL)) {
-            $email = $request->username;
-
-            if (User::where('email', $email)->exists()) {
-                return back()->withErrors(['username' => 'Email sudah digunakan']);
-            }
-        } else {
-            $idnumber = $request->username;
-
-            if (User::where('idnumber', $idnumber)->exists()) {
-                return back()->withErrors(['username' => 'NIK/NIS sudah digunakan']);
-            }
-        }
         $user = User::create([
             'name' => $request->name,
             'idnumber' => $idnumber,
-            'email' => $email,
+            'email' => $request->email,
             'password' => bcrypt($request->password),
         ])->assignRole('kitchen');
 

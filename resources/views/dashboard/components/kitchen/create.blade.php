@@ -43,7 +43,7 @@
                                         <div class="form-group">
                                             <label for="password">Password <code>*</code></label>
                                             <input type="password" class="form-control" id="password" name="password"
-                                                placeholder="Masukkan password" autofocus required>
+                                                placeholder="Masukkan password" required>
                                             <span class="text-danger">{{ $errors->first('password') }}</span>
                                         </div>
                                     </div>
@@ -62,7 +62,7 @@
                                         <div class="form-group">
                                             <label for="name">Nama Dapur<code>*</code></label>
                                             <input type="text" class="form-control" id="name" name="name"
-                                                placeholder="Masukkan nama lengkap" autofocus required>
+                                                placeholder="Masukkan nama lengkap" required>
                                             <span class="text-danger">{{ $errors->first('name') }}</span>
                                         </div>
                                     </div>

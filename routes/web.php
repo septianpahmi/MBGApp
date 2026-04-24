@@ -7,6 +7,7 @@ use App\Http\Controllers\Dashboard\MenuController;
 use App\Http\Controllers\Dashboard\MenuLogsController;
 use App\Http\Controllers\Dashboard\RecepientController;
 use App\Http\Controllers\Dashboard\UserController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -55,6 +56,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/menu-logs', [MenuLogsController::class, 'index'])->name('menuLogs');
     Route::get('/menu-logs/destroy/{id}', [MenuLogsController::class, 'destroy'])->name('menuLogsDestroy');
+
+    Route::post('/feedback-send/{slug}', [FeedbackController::class, 'store'])->name('feedbackSend');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

@@ -42,7 +42,10 @@ class MenuController extends Controller
             'carbs' => 'nullable|numeric',
             'fats' => 'nullable|numeric',
         ]);
-        $user = Kitchen::where('user_id', Auth::id())->firstOrFail();
+        $user = Kitchen::where('user_id', Auth::id())->first();
+        if (!$user) {
+            return back()->with('error', 'Data dapur tidak ditemukan');
+        }
         $receiver = Receiver::with('beneficiaries')
             ->findOrFail($request->receiver_id);
 
@@ -64,10 +67,10 @@ class MenuController extends Controller
         $menu->save();
         Nutrition::create([
             'menu_id' => $menu->id,
-            'calories' => $request->calories,
-            'protein' => $request->protein,
-            'carbs' => $request->carbs,
-            'fats' => $request->fats,
+            'calories' => $request->calories ?? 0,
+            'protein' => $request->protein ?? 0,
+            'carbs' => $request->carbs ?? 0,
+            'fats' => $request->fats ?? 0,
         ]);
 
         MenuStatusLog::create([

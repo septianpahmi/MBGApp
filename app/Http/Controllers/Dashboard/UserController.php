@@ -66,7 +66,7 @@ class UserController extends Controller
             'email' => $email,
             'idnumber' => $idnumber,
             'password' => bcrypt($request->password),
-        ]);
+        ])->assignRole(['admin']);
 
         return redirect('/users')->with('success', 'User created successfully.');
     }

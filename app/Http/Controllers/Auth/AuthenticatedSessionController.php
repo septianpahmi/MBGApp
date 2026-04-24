@@ -27,8 +27,13 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
+        $user = Auth::user();
 
-        return redirect('/');
+        return match (true) {
+            $user->hasRole('admin'),
+            $user->hasRole('kitchen') => redirect('/dashboard'),
+            default => redirect('/'),
+        };
     }
 
     /**

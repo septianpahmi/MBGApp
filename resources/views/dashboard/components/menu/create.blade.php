@@ -79,7 +79,7 @@
                                         <div class="form-group">
                                             <label for="date">Tanggal <code>*</code></label>
                                             <input type="date" class="form-control" id="date" name="date"
-                                                autofocus required>
+                                                required>
                                             <span class="text-danger">{{ $errors->first('date') }}</span>
                                         </div>
                                     </div>
