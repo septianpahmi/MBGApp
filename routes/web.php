@@ -56,7 +56,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/menu/status/{slug}', [MenuController::class, 'status'])->name('menuStatusUpdate');
 
     Route::get('/penilaian', [DashboardFeedbackController::class, 'index'])->name('penilaian');
-    Route::get('/penilaian/detail/{id}', [DashboardFeedbackController::class, 'detail'])->name('penilaianDetail');
+    Route::get('/penilaian/detail/{id}/{menu}', [DashboardFeedbackController::class, 'detail'])->name('penilaianDetail');
 
     Route::get('/menu-logs', [MenuLogsController::class, 'index'])->name('menuLogs');
     Route::get('/menu-logs/destroy/{id}', [MenuLogsController::class, 'destroy'])->name('menuLogsDestroy');

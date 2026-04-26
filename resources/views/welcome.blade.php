@@ -13,7 +13,16 @@
             display: none !important;
         }
     </style>
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
 
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
 </head>
 
 <body class="bg-gray-100 font-sans">
@@ -54,7 +63,6 @@
                                         alt="Profile Picture" class="w-12 h-12 rounded-md object-cover mr-3">
                                 </div>
                                 <div class="flex justify-start flex-col">
-                                    <h1 class="text-xs text-gray-800">Master Nutrisi</h1>
                                     <h1 class="text-sm font-bold text-gray-800 ">Hallo, {{ Auth::user()->name }}!
                                     </h1>
                                     <h1 class="text-xs font-semibold text-gray-800">
@@ -367,17 +375,26 @@
                         {{-- Best Menu --}}
                         <section class="relative p-4 z-10 -translate-y-20 mb-6">
                             <h1 class="font-bold text-gray-800">Menu Terbaik</h1>
-                            <div class="grid grid-cols-2 items-center gap-2 mt-4">
-                                <div class="bg-white rounded-xl w-full shadow-md overflow-hidden">
-                                    <div class="flex flex-col h-full text-gray-800 ">
-                                        <img src="https://cdn-web.bgn.go.id/news/01JHGAMFSDZA3V7HC4HMN5EEFE.jpg"
-                                            alt="" class="w-full h-46 object-cover rounded-t-xl">
-                                        <div class="p-4">
-                                            <h2 class="font-bold text-md">Menu Favorit 1</h2>
-                                            <p class="text-gray-600 text-sm">Deskripsi menu favorit 1</p>
-                                            <div class="flex justify-between items-center mt-4">
-                                                <div
-                                                    class="text-xs text-gray-600 font-semibold flex items-center gap-1">
+
+                            <div class="flex gap-3 mt-4 overflow-x-auto no-scrollbar snap-x snap-mandatory">
+                                @foreach ($bestMenu as $menu)
+                                    <div
+                                        class="min-w-[200px] snap-start bg-white rounded-xl shadow-md overflow-hidden flex-shrink-0">
+
+                                        <img src="/storage/menu/{{ $menu->image }}"
+                                            class="w-full h-40 object-cover">
+
+                                        <div class="p-3">
+                                            <h2 class="font-bold text-sm">{{ $menu->title }}</h2>
+
+                                            <p class="text-gray-600 text-xs">
+                                                {{ Str::limit($menu->description, 40) }}
+                                            </p>
+
+                                            <div class="flex justify-between items-center mt-3">
+
+                                                <!-- Rating -->
+                                                <div class="text-xs text-gray-600 flex items-center gap-1">
                                                     <svg width="10px" height="10px" viewBox="0 -0.5 21 21"
                                                         version="1.1" xmlns="http://www.w3.org/2000/svg"
                                                         xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -395,62 +412,25 @@
                                                                 </g>
                                                             </g>
                                                         </g>
-                                                    </svg>4.9
+                                                    </svg> {{ number_format($menu->reviews_avg_rating ?? 0, 1) }}
                                                 </div>
-                                                <div
-                                                    class="text-xs text-gray-600 font-semibold flex items-center gap-1">
-                                                    25+
-                                                    Diterima
+
+                                                <!-- Total -->
+                                                <div class="text-xs text-gray-600">
+                                                    {{ $menu->reviews_count }}+ Diterima
                                                 </div>
+
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="bg-white rounded-xl w-full shadow-md overflow-hidden">
-                                    <div class="flex flex-col h-full text-gray-800 ">
-                                        <img src="https://cdn-web.bgn.go.id/news/01JHGAMFSDZA3V7HC4HMN5EEFE.jpg"
-                                            alt="" class="w-full h-46 object-cover rounded-t-xl">
-                                        <div class="p-4">
-                                            <h2 class="font-bold text-md">Menu Favorit 1</h2>
-                                            <p class="text-gray-600 text-sm">Deskripsi menu favorit 1</p>
-                                            <div class="flex justify-between items-center mt-4">
-                                                <div
-                                                    class="text-xs text-gray-600 font-semibold flex items-center gap-1">
-                                                    <svg width="10px" height="10px" viewBox="0 -0.5 21 21"
-                                                        version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                        <g id="Page-1" stroke="currentColor" stroke-width="1"
-                                                            fill="currentColor" fill-rule="evenodd">
-                                                            <g id="Dribbble-Light-Preview"
-                                                                transform="translate(-99.000000, -320.000000)"
-                                                                fill="currentColor">
-                                                                <g id="icons"
-                                                                    transform="translate(56.000000, 160.000000)">
-                                                                    <path
-                                                                        d="M60.556381,172.206 C60.1080307,172.639 59.9043306,173.263 60.0093306,173.875 L60.6865811,177.791 C60.8976313,179.01 59.9211306,180 58.8133798,180 C58.5214796,180 58.2201294,179.931 57.9282291,179.779 L54.3844766,177.93 C54.1072764,177.786 53.8038262,177.714 53.499326,177.714 C53.1958758,177.714 52.8924256,177.786 52.6152254,177.93 L49.0714729,179.779 C48.7795727,179.931 48.4782224,180 48.1863222,180 C47.0785715,180 46.1020708,179.01 46.3131209,177.791 L46.9903714,173.875 C47.0953715,173.263 46.8916713,172.639 46.443321,172.206 L43.575769,169.433 C42.4480682,168.342 43.0707186,166.441 44.6289197,166.216 L48.5916225,165.645 C49.211123,165.556 49.7466233,165.17 50.0227735,164.613 L51.7951748,161.051 C52.143775,160.35 52.8220755,160 53.499326,160 C54.1776265,160 54.855927,160.35 55.2045272,161.051 L56.9769285,164.613 C57.2530787,165.17 57.7885791,165.556 58.4080795,165.645 L62.3707823,166.216 C63.9289834,166.441 64.5516338,168.342 63.423933,169.433 L60.556381,172.206 Z"
-                                                                        id="star_favorite-[#1499]">
-                                                                    </path>
-                                                                </g>
-                                                            </g>
-                                                        </g>
-                                                    </svg>4.9
-                                                </div>
-                                                <div
-                                                    class="text-xs text-gray-600 font-semibold flex items-center gap-1">
-                                                    15+
-                                                    Diterima
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </section>
                     </div>
                 </template>
                 <template x-if="page === 'feedback'">
                     <div x-transition>
-                        <div class="p-4">
+                        <div class="p-4 bg-white shadow-sm">
                             <h1 class="font-bold text-gray-800 text-xl">
                                 Penilaian Saya
                             </h1>
@@ -520,26 +500,17 @@
                             </div>
                         </section>
                         <section class="relative z-10 mb-4">
-                            <div class="flex items-center relative h-[210px] top-0">
-                                <div class="absolute flex flex-col p-4">
+                            <div class="relative flex items-center top-12 mb-12">
+                                <div class="flex flex-col p-4">
                                     <h1 class="text-gray-600 text-xl font-bold">{{ Auth::user()->name }}</h1>
                                     <p class="text-gray-600 text-sm">
                                         {{ $beneficiaries ? $beneficiaries->receiver->name : 'Kitchen not found' }}</p>
                                 </div>
-                                <div class="absolute p-4 w-full bottom-4">
-                                    <div class="flex justify-between mb-1">
-                                        <span class="text-sm font-medium text-blue-900">Master Nutrisi</span>
-                                        <span class="text-sm font-medium text-gray-600">163/200</span>
-                                    </div>
-                                    <div class="w-full bg-gray-300 rounded-full h-2">
-                                        <div class="bg-blue-900 h-2 rounded-full" style="width: 45%"></div>
-                                    </div>
-                                </div>
                             </div>
                             <div
                                 class="bg-white py-4 px-4 relative gap-4 items-center flex z-10 border-b-2 border-gray-200">
-                                <button @click="page='home'"
-                                    :class="page === 'home' ? 'text-blue-900 scale-110' : 'text-gray-600'"
+                                <button @click="page='kitchen'"
+                                    :class="page === 'kitchen' ? 'text-blue-900 scale-110' : 'text-gray-600'"
                                     class="flex items-center transition gap-4">
                                     <span><svg width="25px" height="25px" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -577,6 +548,38 @@
                                 </div>
                             </form>
                         </section>
+                    </div>
+                </template>
+                <template x-if="page === 'kitchen'">
+                    <div x-transition>
+                        <div class="relative p-4 bg-white shadow-sm z-10">
+                            <h1 class="font-bold text-gray-800 text-xl">
+                                Informasi Dapur
+                            </h1>
+                        </div>
+                        <section class="flex items-center relative h-[210px] top-0">
+                            <iframe
+                                src="https://maps.google.com/maps?q={{ urlencode($menu->kitchen->name) }}&output=embed"
+                                class="w-full h-full" style="border:0;" loading="lazy">
+                            </iframe>
+                        </section>
+                        <div class="p-4 flex flex-col justify-start">
+                            <div class="border-b border-gray-200 py-2">
+                                <div class="text-gray-500 text-sm">Nama Dapur</div>
+                                <div class="text-gray-700 text-lg font-bold">
+                                    {{ $menu ? $menu->kitchen->name : 'Kitchen not found' }}</div>
+                            </div>
+                            <div class="border-b border-gray-200 py-2">
+                                <div class="text-gray-500 text-sm">Kontak</div>
+                                <div class="text-gray-700 text-lg font-bold">
+                                    {{ $menu ? $menu->kitchen->phone : 'Kitchen not found' }}</div>
+                            </div>
+                            <div class="border-b border-gray-200 py-2">
+                                <div class="text-gray-500 text-sm">Alamat</div>
+                                <div class="text-gray-700 text-lg font-bold">
+                                    {{ $menu ? $menu->kitchen->address : 'Kitchen not found' }}</div>
+                            </div>
+                        </div>
                     </div>
                 </template>
                 @if ($todayMenu)
@@ -822,6 +825,7 @@
             }
         }
     </script>
+
     {{-- <script>
         function app() {
             return {

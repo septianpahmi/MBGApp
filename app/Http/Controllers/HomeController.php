@@ -34,6 +34,12 @@ class HomeController extends Controller
         $feedback = Review::where('menu_id', optional($todayMenu)->id)->avg('rating');
         $menuCount = Review::where('menu_id', optional($todayMenu)->id)->count();
         $nutrision = Nutrition::where('menu_id', optional($todayMenu)->id)->first();
+        $bestMenu = Menu::withAvg('reviews', 'rating')
+            ->withCount('reviews')
+            ->orderByDesc('reviews_avg_rating')
+            ->where('receiver_id', $beneficiaries->receiver_id)
+            ->take(10)
+            ->get();
         $hasFeedback = false;
 
         if ($todayMenu && $beneficiaries) {
@@ -41,6 +47,6 @@ class HomeController extends Controller
                 ->where('beneficiary_id', $beneficiaries->id)
                 ->exists();
         }
-        return view('welcome', compact('menu', 'beneficiaries', 'todayMenu', 'feedback', 'menuCount', 'nutrision', 'hasFeedback'));
+        return view('welcome', compact('menu', 'bestMenu', 'beneficiaries', 'todayMenu', 'feedback', 'menuCount', 'nutrision', 'hasFeedback'));
     }
 }

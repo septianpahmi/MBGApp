@@ -54,7 +54,8 @@
                                             <td>
                                                 <div class="btn-group btn-block">
                                                     <a class="btn btn-sm btn-primary"
-                                                        href="{{ route('penilaianDetail', $reviews->id) }}"> Lihat
+                                                        href="{{ route('penilaianDetail', ['id' => $reviews->id, 'menu' => $reviews->menu_id]) }}">
+                                                        Lihat
                                                         Penilaian
                                                     </a>
                                                 </div>
