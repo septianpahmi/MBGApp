@@ -364,88 +364,6 @@
                                 </div>
                             </section>
                         @endif
-                        {{-- Menu Favorit Section --}}
-                        <section class="relative p-4 z-10 -translate-y-20">
-                            <h1 class="font-bold text-gray-800">Menu Favorit</h1>
-                            <div class="grid grid-cols-2 items-center gap-2 mt-4">
-                                <div class="bg-white rounded-xl w-full shadow-md overflow-hidden">
-                                    <div class="flex flex-col h-full text-gray-800 ">
-                                        <img src="https://cdn-web.bgn.go.id/news/01JHGAMFSDZA3V7HC4HMN5EEFE.jpg"
-                                            alt="" class="w-full h-46 object-cover rounded-t-xl">
-                                        <div class="p-4">
-                                            <h2 class="font-bold text-md">Menu Favorit 1</h2>
-                                            <p class="text-gray-600 text-sm">Deskripsi menu favorit 1</p>
-                                            <div class="flex justify-between items-center mt-4">
-                                                <div
-                                                    class="text-xs text-gray-600 font-semibold flex items-center gap-1">
-                                                    <svg width="10px" height="10px" viewBox="0 -0.5 21 21"
-                                                        version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                        <g id="Page-1" stroke="currentColor" stroke-width="1"
-                                                            fill="currentColor" fill-rule="evenodd">
-                                                            <g id="Dribbble-Light-Preview"
-                                                                transform="translate(-99.000000, -320.000000)"
-                                                                fill="currentColor">
-                                                                <g id="icons"
-                                                                    transform="translate(56.000000, 160.000000)">
-                                                                    <path
-                                                                        d="M60.556381,172.206 C60.1080307,172.639 59.9043306,173.263 60.0093306,173.875 L60.6865811,177.791 C60.8976313,179.01 59.9211306,180 58.8133798,180 C58.5214796,180 58.2201294,179.931 57.9282291,179.779 L54.3844766,177.93 C54.1072764,177.786 53.8038262,177.714 53.499326,177.714 C53.1958758,177.714 52.8924256,177.786 52.6152254,177.93 L49.0714729,179.779 C48.7795727,179.931 48.4782224,180 48.1863222,180 C47.0785715,180 46.1020708,179.01 46.3131209,177.791 L46.9903714,173.875 C47.0953715,173.263 46.8916713,172.639 46.443321,172.206 L43.575769,169.433 C42.4480682,168.342 43.0707186,166.441 44.6289197,166.216 L48.5916225,165.645 C49.211123,165.556 49.7466233,165.17 50.0227735,164.613 L51.7951748,161.051 C52.143775,160.35 52.8220755,160 53.499326,160 C54.1776265,160 54.855927,160.35 55.2045272,161.051 L56.9769285,164.613 C57.2530787,165.17 57.7885791,165.556 58.4080795,165.645 L62.3707823,166.216 C63.9289834,166.441 64.5516338,168.342 63.423933,169.433 L60.556381,172.206 Z"
-                                                                        id="star_favorite-[#1499]">
-                                                                    </path>
-                                                                </g>
-                                                            </g>
-                                                        </g>
-                                                    </svg>4.9
-                                                </div>
-                                                <div
-                                                    class="text-xs text-gray-600 font-semibold flex items-center gap-1">
-                                                    25+
-                                                    Diterima
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-white rounded-xl w-full shadow-md overflow-hidden">
-                                    <div class="flex flex-col h-full text-gray-800 ">
-                                        <img src="https://cdn-web.bgn.go.id/news/01JHGAMFSDZA3V7HC4HMN5EEFE.jpg"
-                                            alt="" class="w-full h-46 object-cover rounded-t-xl">
-                                        <div class="p-4">
-                                            <h2 class="font-bold text-md">Menu Favorit 1</h2>
-                                            <p class="text-gray-600 text-sm">Deskripsi menu favorit 1</p>
-                                            <div class="flex justify-between items-center mt-4">
-                                                <div
-                                                    class="text-xs text-gray-600 font-semibold flex items-center gap-1">
-                                                    <svg width="10px" height="10px" viewBox="0 -0.5 21 21"
-                                                        version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                        <g id="Page-1" stroke="currentColor" stroke-width="1"
-                                                            fill="currentColor" fill-rule="evenodd">
-                                                            <g id="Dribbble-Light-Preview"
-                                                                transform="translate(-99.000000, -320.000000)"
-                                                                fill="currentColor">
-                                                                <g id="icons"
-                                                                    transform="translate(56.000000, 160.000000)">
-                                                                    <path
-                                                                        d="M60.556381,172.206 C60.1080307,172.639 59.9043306,173.263 60.0093306,173.875 L60.6865811,177.791 C60.8976313,179.01 59.9211306,180 58.8133798,180 C58.5214796,180 58.2201294,179.931 57.9282291,179.779 L54.3844766,177.93 C54.1072764,177.786 53.8038262,177.714 53.499326,177.714 C53.1958758,177.714 52.8924256,177.786 52.6152254,177.93 L49.0714729,179.779 C48.7795727,179.931 48.4782224,180 48.1863222,180 C47.0785715,180 46.1020708,179.01 46.3131209,177.791 L46.9903714,173.875 C47.0953715,173.263 46.8916713,172.639 46.443321,172.206 L43.575769,169.433 C42.4480682,168.342 43.0707186,166.441 44.6289197,166.216 L48.5916225,165.645 C49.211123,165.556 49.7466233,165.17 50.0227735,164.613 L51.7951748,161.051 C52.143775,160.35 52.8220755,160 53.499326,160 C54.1776265,160 54.855927,160.35 55.2045272,161.051 L56.9769285,164.613 C57.2530787,165.17 57.7885791,165.556 58.4080795,165.645 L62.3707823,166.216 C63.9289834,166.441 64.5516338,168.342 63.423933,169.433 L60.556381,172.206 Z"
-                                                                        id="star_favorite-[#1499]">
-                                                                    </path>
-                                                                </g>
-                                                            </g>
-                                                        </g>
-                                                    </svg>4.9
-                                                </div>
-                                                <div
-                                                    class="text-xs text-gray-600 font-semibold flex items-center gap-1">
-                                                    15+
-                                                    Diterima
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
                         {{-- Best Menu --}}
                         <section class="relative p-4 z-10 -translate-y-20 mb-6">
                             <h1 class="font-bold text-gray-800">Menu Terbaik</h1>
@@ -661,123 +579,125 @@
                         </section>
                     </div>
                 </template>
-                <template x-if="page === 'sendfeedback'">
-                    <div x-transition>
-                        <div class="p-4">
-                            <h1 class="font-bold text-gray-800 text-xl">
-                                Berikan Penilaian
-                            </h1>
-                        </div>
-                        <section id="sendfeedback" class="p-4">
-                            <form action="{{ route('feedbackSend', $todayMenu->slug) }}" method="POST"
-                                enctype="multipart/form-data" x-data="{ rating: 0, imagePreview: null }" class="space-y-2">
-                                @csrf
+                @if ($todayMenu)
+                    <template x-if="page === 'sendfeedback'">
+                        <div x-transition>
+                            <div class="p-4">
+                                <h1 class="font-bold text-gray-800 text-xl">
+                                    Berikan Penilaian
+                                </h1>
+                            </div>
+                            <section id="sendfeedback" class="p-4">
+                                <form action="{{ route('feedbackSend', $todayMenu->slug) }}" method="POST"
+                                    enctype="multipart/form-data" x-data="{ rating: 0, imagePreview: null }" class="space-y-2">
+                                    @csrf
 
-                                <input type="hidden" name="menu_id" value="{{ $todayMenu->id }}">
-                                <input type="hidden" name="rating" :value="rating">
+                                    <input type="hidden" name="menu_id" value="{{ $todayMenu->id }}">
+                                    <input type="hidden" name="rating" :value="rating">
 
-                                <!-- CARD MENU -->
-                                <div class="px-2">
-                                    <div
-                                        class="bg-white border border-gray-200 p-3 rounded-lg flex items-center gap-3 shadow-sm">
-                                        <img src="/storage/menu/{{ $todayMenu->image }}"
-                                            class="w-12 h-12 rounded-md object-cover">
-                                        <div>
-                                            <h1 class="text-sm font-bold text-gray-800">
-                                                {{ $todayMenu->title ?? 'Menu tidak ditemukan' }}
-                                            </h1>
-                                            <p class="text-xs text-gray-600">
-                                                {{ Str::limit($todayMenu->description ?? '-', 50) }}
-                                            </p>
+                                    <!-- CARD MENU -->
+                                    <div class="px-2">
+                                        <div
+                                            class="bg-white border border-gray-200 p-3 rounded-lg flex items-center gap-3 shadow-sm">
+                                            <img src="/storage/menu/{{ $todayMenu->image }}"
+                                                class="w-12 h-12 rounded-md object-cover">
+                                            <div>
+                                                <h1 class="text-sm font-bold text-gray-800">
+                                                    {{ $todayMenu->title ?? 'Menu tidak ditemukan' }}
+                                                </h1>
+                                                <p class="text-xs text-gray-600">
+                                                    {{ Str::limit($todayMenu->description ?? '-', 50) }}
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <!-- RATING -->
-                                <div class="px-2">
-                                    <h1 class="text-sm font-semibold text-gray-800 mb-2">
-                                        Bagaimana Penilaian anda?
-                                    </h1>
+                                    <!-- RATING -->
+                                    <div class="px-2">
+                                        <h1 class="text-sm font-semibold text-gray-800 mb-2">
+                                            Bagaimana Penilaian anda?
+                                        </h1>
 
-                                    <div class="flex gap-1">
-                                        <template x-for="i in 5" :key="i">
-                                            <svg @click="rating = i" xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 24 24" class="w-10 h-10 cursor-pointer transition"
-                                                :class="i <= rating ? 'text-yellow-400 scale-110' : 'text-gray-300'"
-                                                fill="currentColor">
-                                                <path
-                                                    d="m12 17.328-5.403 3.286a.75.75 0 0 1-1.12-.813l1.456-6.155-4.796-4.123a.75.75 0 0 1 .428-1.316l6.303-.517 2.44-5.835a.75.75 0 0 1 1.384 0l2.44 5.835 6.303.517a.75.75 0 0 1 .427 1.316l-4.795 4.123 1.456 6.155a.75.75 0 0 1-1.12.813L12 17.328z" />
-                                            </svg>
-                                        </template>
+                                        <div class="flex gap-1">
+                                            <template x-for="i in 5" :key="i">
+                                                <svg @click="rating = i" xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24" class="w-10 h-10 cursor-pointer transition"
+                                                    :class="i <= rating ? 'text-yellow-400 scale-110' : 'text-gray-300'"
+                                                    fill="currentColor">
+                                                    <path
+                                                        d="m12 17.328-5.403 3.286a.75.75 0 0 1-1.12-.813l1.456-6.155-4.796-4.123a.75.75 0 0 1 .428-1.316l6.303-.517 2.44-5.835a.75.75 0 0 1 1.384 0l2.44 5.835 6.303.517a.75.75 0 0 1 .427 1.316l-4.795 4.123 1.456 6.155a.75.75 0 0 1-1.12.813L12 17.328z" />
+                                                </svg>
+                                            </template>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <!-- KOMENTAR -->
-                                <div class="px-2">
-                                    <label class="block mb-1 text-sm font-medium text-gray-700">
-                                        Berikan Ulasan Anda
-                                    </label>
-                                    <textarea name="comment" rows="4"
-                                        class="w-full p-3 text-sm bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
-                                        placeholder="Tulis ulasan..."></textarea>
-                                </div>
+                                    <!-- KOMENTAR -->
+                                    <div class="px-2">
+                                        <label class="block mb-1 text-sm font-medium text-gray-700">
+                                            Berikan Ulasan Anda
+                                        </label>
+                                        <textarea name="comment" rows="4"
+                                            class="w-full p-3 text-sm bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                                            placeholder="Tulis ulasan..."></textarea>
+                                    </div>
 
-                                <!-- UPLOAD IMAGE -->
-                                <div class="px-2">
-                                    <label class="block mb-1 text-sm font-medium text-gray-700">
-                                        Upload Foto
-                                    </label>
+                                    <!-- UPLOAD IMAGE -->
+                                    <div class="px-2">
+                                        <label class="block mb-1 text-sm font-medium text-gray-700">
+                                            Upload Foto
+                                        </label>
 
-                                    <!-- Upload Box -->
-                                    <div class="relative w-28 h-28">
-                                        <label for="image"
-                                            class="flex flex-col items-center justify-center w-full h-full border-2 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
+                                        <!-- Upload Box -->
+                                        <div class="relative w-28 h-28">
+                                            <label for="image"
+                                                class="flex flex-col items-center justify-center w-full h-full border-2 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
 
-                                            <template x-if="!imagePreview">
-                                                <div class="flex flex-col items-center justify-center">
-                                                    <!-- SVG tetap -->
-                                                    <svg class="w-6 h-6 text-gray-400" fill="none"
-                                                        viewBox="0 0 20 16">
-                                                        <path stroke="currentColor" stroke-width="2"
-                                                            d="M13 13h3a3 3 0 0 0 0-6h-.025A5.5 5.5 0 0 0 5 5a4 4 0 0 0 0 8h2M10 15V6m0 0-2 2m2-2 2 2" />
-                                                    </svg>
-                                                </div>
-                                            </template>
+                                                <template x-if="!imagePreview">
+                                                    <div class="flex flex-col items-center justify-center">
+                                                        <!-- SVG tetap -->
+                                                        <svg class="w-6 h-6 text-gray-400" fill="none"
+                                                            viewBox="0 0 20 16">
+                                                            <path stroke="currentColor" stroke-width="2"
+                                                                d="M13 13h3a3 3 0 0 0 0-6h-.025A5.5 5.5 0 0 0 5 5a4 4 0 0 0 0 8h2M10 15V6m0 0-2 2m2-2 2 2" />
+                                                        </svg>
+                                                    </div>
+                                                </template>
 
-                                            <template x-if="imagePreview">
-                                                <img :src="imagePreview"
-                                                    class="w-full h-full object-cover rounded-lg">
-                                            </template>
+                                                <template x-if="imagePreview">
+                                                    <img :src="imagePreview"
+                                                        class="w-full h-full object-cover rounded-lg">
+                                                </template>
 
-                                            <input id="image" type="file" name="image" class="hidden"
-                                                @change="
+                                                <input id="image" type="file" name="image" class="hidden"
+                                                    @change="
                             const file = $event.target.files[0];
                             if (file) {
                                 imagePreview = URL.createObjectURL(file);
                             }
                         ">
-                                        </label>
+                                            </label>
 
-                                        <!-- HAPUS IMAGE -->
-                                        <button type="button" x-show="imagePreview"
-                                            @click="imagePreview = null; document.getElementById('image').value='';"
-                                            class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 text-xs">
-                                            ✕
+                                            <!-- HAPUS IMAGE -->
+                                            <button type="button" x-show="imagePreview"
+                                                @click="imagePreview = null; document.getElementById('image').value='';"
+                                                class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 text-xs">
+                                                ✕
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- BUTTON -->
+                                    <div class="px-2 pt-2">
+                                        <button type="submit"
+                                            class="w-full bg-blue-900 hover:bg-blue-700 text-white text-sm font-bold py-3 rounded-lg transition">
+                                            Kirim Penilaian
                                         </button>
                                     </div>
-                                </div>
-
-                                <!-- BUTTON -->
-                                <div class="px-2 pt-2">
-                                    <button type="submit"
-                                        class="w-full bg-blue-900 hover:bg-blue-700 text-white text-sm font-bold py-3 rounded-lg transition">
-                                        Kirim Penilaian
-                                    </button>
-                                </div>
-                            </form>
-                        </section>
-                    </div>
-                </template>
+                                </form>
+                            </section>
+                        </div>
+                    </template>
+                @endif
             </div>
         @else
             <div class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\BeneficiaryController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\FeedbackController as DashboardFeedbackController;
 use App\Http\Controllers\Dashboard\KitchenController;
 use App\Http\Controllers\Dashboard\MenuController;
 use App\Http\Controllers\Dashboard\MenuLogsController;
@@ -53,6 +54,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/menu/update/{slug}', [MenuController::class, 'update'])->name('menuUpdate');
     Route::post('/menu/store', [MenuController::class, 'store'])->name('menuStore');
     Route::post('/menu/status/{slug}', [MenuController::class, 'status'])->name('menuStatusUpdate');
+
+    Route::get('/penilaian', [DashboardFeedbackController::class, 'index'])->name('penilaian');
+    Route::get('/penilaian/detail/{id}', [DashboardFeedbackController::class, 'detail'])->name('penilaianDetail');
 
     Route::get('/menu-logs', [MenuLogsController::class, 'index'])->name('menuLogs');
     Route::get('/menu-logs/destroy/{id}', [MenuLogsController::class, 'destroy'])->name('menuLogsDestroy');

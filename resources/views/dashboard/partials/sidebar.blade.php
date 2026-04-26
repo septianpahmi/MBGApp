@@ -68,6 +68,15 @@
                           </p>
                       </a>
                   </li>
+                  <li class="nav-item ">
+                      <a href="{{ route('penilaian') }}"
+                          class="nav-link {{ request()->is(['penilaian', 'penilaian/detail/*']) ? 'active' : '' }}">
+                          <i class="nav-icon fas fa-star"></i>
+                          <p>
+                              Penilaian
+                          </p>
+                      </a>
+                  </li>
                   <li class="nav-header">HISTORY</li>
                   <li class="nav-item ">
                       <a href="{{ route('menuLogs') }}"
