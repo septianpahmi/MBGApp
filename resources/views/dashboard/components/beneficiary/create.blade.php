@@ -33,9 +33,11 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="email">Email/NIK/NIS <code>*</code></label>
+                                            <label for="email">NIK/NIS <code>*</code></label>
                                             <input type="text" class="form-control" id="email" name="username"
-                                                placeholder="Masukkan email/NIK/NIS" required>
+                                                placeholder="Masukkan NIK/NIS" inputmode="numeric" pattern="[0-9]*"
+                                                minlength="3" maxlength="15" required
+                                                oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                                             <span class="text-danger">{{ $errors->first('username') }}</span>
                                         </div>
                                     </div>

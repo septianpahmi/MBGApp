@@ -6,13 +6,16 @@ use App\Http\Controllers\Controller;
 use App\Models\Kitchen;
 use App\Models\Receiver;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RecepientController extends Controller
 {
     public function index()
     {
         $title = "Instansi Penerima";
-        $data = Receiver::all();
+        $data = Receiver::whereHas('kitchen', function ($query) {
+            $query->where('user_id', Auth::id());
+        })->get();
 
         return view('dashboard.components.receipent.index', compact('title', 'data'));
     }

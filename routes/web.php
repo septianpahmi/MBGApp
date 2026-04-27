@@ -14,24 +14,16 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 
-
+// Route::view('/offline', 'offline');
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::middleware('auth')->group(function () {
+
+Route::middleware(['auth', 'role:admin|kitchen'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
-    Route::get('/users', [UserController::class, 'index'])->name('users');
-    Route::get('/users/destroy/{id}', [UserController::class, 'destroy'])->name('usersDestroy');
-    Route::get('/users/create', [UserController::class, 'create'])->name('usersCreate');
-    Route::get('/users/edit/{id}', [UserController::class, 'edit'])->name('usersEdit');
-    Route::post('/users/update/{id}', [UserController::class, 'update'])->name('usersUpdate');
-    Route::post('/users/store', [UserController::class, 'store'])->name('usersStore');
-
-    Route::get('/kitchen', [KitchenController::class, 'index'])->name('kitchen');
-    Route::get('/kitchen/destroy/{slug}', [KitchenController::class, 'destroy'])->name('kitchenDestroy');
-    Route::get('/kitchen/create', [KitchenController::class, 'create'])->name('kitchenCreate');
-    Route::get('/kitchen/edit/{slug}', [KitchenController::class, 'edit'])->name('kitchenEdit');
-    Route::post('/kitchen/update/{slug}', [KitchenController::class, 'update'])->name('kitchenUpdate');
-    Route::post('/kitchen/store', [KitchenController::class, 'store'])->name('kitchenStore');
+});
+Route::middleware(['auth', 'role:user'])->group(function () {
+    Route::post('/feedback-send/{slug}', [FeedbackController::class, 'store'])->name('feedbackSend');
+});
+Route::middleware(['auth', 'role:kitchen'])->group(function () {
 
     Route::get('/recipient', [RecepientController::class, 'index'])->name('recipient');
     Route::get('/recipient/destroy/{id}', [RecepientController::class, 'destroy'])->name('recipientDestroy');
@@ -60,8 +52,21 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/menu-logs', [MenuLogsController::class, 'index'])->name('menuLogs');
     Route::get('/menu-logs/destroy/{id}', [MenuLogsController::class, 'destroy'])->name('menuLogsDestroy');
+});
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/users', [UserController::class, 'index'])->name('users');
+    Route::get('/users/destroy/{id}', [UserController::class, 'destroy'])->name('usersDestroy');
+    Route::get('/users/create', [UserController::class, 'create'])->name('usersCreate');
+    Route::get('/users/edit/{id}', [UserController::class, 'edit'])->name('usersEdit');
+    Route::post('/users/update/{id}', [UserController::class, 'update'])->name('usersUpdate');
+    Route::post('/users/store', [UserController::class, 'store'])->name('usersStore');
 
-    Route::post('/feedback-send/{slug}', [FeedbackController::class, 'store'])->name('feedbackSend');
+    Route::get('/kitchen', [KitchenController::class, 'index'])->name('kitchen');
+    Route::get('/kitchen/destroy/{slug}', [KitchenController::class, 'destroy'])->name('kitchenDestroy');
+    Route::get('/kitchen/create', [KitchenController::class, 'create'])->name('kitchenCreate');
+    Route::get('/kitchen/edit/{slug}', [KitchenController::class, 'edit'])->name('kitchenEdit');
+    Route::post('/kitchen/update/{slug}', [KitchenController::class, 'update'])->name('kitchenUpdate');
+    Route::post('/kitchen/store', [KitchenController::class, 'store'])->name('kitchenStore');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

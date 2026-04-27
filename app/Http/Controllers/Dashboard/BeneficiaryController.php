@@ -4,16 +4,23 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Models\Beneficiary;
+use App\Models\Kitchen;
 use App\Models\Receiver;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BeneficiaryController extends Controller
 {
     public function index()
     {
         $title = 'Penerima Manfaat';
-        $data = Beneficiary::all();
+        // $data = Beneficiary::all();
+        $kitchen = Kitchen::where('user_id', Auth::id())->first();
+
+        $data = Beneficiary::whereHas('receiver', function ($q) use ($kitchen) {
+            $q->where('kitchen_id', $kitchen->id);
+        })->get();
         return view('dashboard.components.beneficiary.index', compact('data', 'title'));
     }
 
